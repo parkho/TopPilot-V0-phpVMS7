@@ -10,4 +10,4 @@ Install:
 
 Issues:
 This is my first attempt to create modules for the new system so give me a break!
-You can report any issues at my Discord channel at https://discord.gg/GBGZtt2aFV
+You can report any issues at my Discord channel at https://discord.gg/GBGZtt2aFV 
