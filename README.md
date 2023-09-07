@@ -8,6 +8,6 @@
 4.Click 'View Frontend Module'. There is no Admin Page for this, so don't try!
 5.done
 
-Issues:
+#Issues:
 This is my first attempt to create modules for the new system so give me a break!
 You can report any issues at my Discord channel at https://discord.gg/GBGZtt2aFV 
