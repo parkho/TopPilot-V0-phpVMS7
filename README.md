@@ -16,4 +16,4 @@
 
 ### Images:
 
-![Best Flight Time](https://www.parkhotech.com/assets/img/tp.pn)
+![Best Flight Time](https://www.parkhotech.com/assets/img/tp.png)
