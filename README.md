@@ -13,3 +13,7 @@
 ### Issues:
 + This is my first attempt to create modules for the new system so give me a break!
 + You can report any issues at my ##[Discord channel](https://discord.gg/GBGZtt2aFV)
+
+### Images:
+
+![Best Flight Time](https://www.parkhotech.com/assets/img/tp.pn)
