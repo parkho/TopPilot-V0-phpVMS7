@@ -1,0 +1,31 @@
+{
+    "name": "VENDOR/toppilot-module",
+    "type": "phpvms-module",
+    "description": "",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\TopPilot\\Providers\\AppServiceProvider",
+                "Modules\\TopPilot\\Providers\\EventServiceProvider",
+                "Modules\\TopPilot\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TopPilot\\": "."
+        }
+    }
+}

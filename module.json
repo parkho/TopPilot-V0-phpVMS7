@@ -1,0 +1,16 @@
+{
+    "name": "TopPilot",
+    "alias": "toppilot",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\TopPilot\\Providers\\AppServiceProvider",
+        "Modules\\TopPilot\\Providers\\EventServiceProvider",
+        "Modules\\TopPilot\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
