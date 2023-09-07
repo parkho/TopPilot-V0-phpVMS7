@@ -30,16 +30,7 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $result->user_name }}</td>
-                                    <td>
-                                        @php
-                                            $minutes = $result->flighttime;
-                                            $hours = floor($minutes / 60); // Calculate hours from minutes
-                                            $remaining_minutes = $minutes % 60; // Calculate remaining minutes
-                                            $time_format = gmdate('H:i:s', mktime($hours, $remaining_minutes, 0));
-                                            echo $time_format;
-                                        @endphp
-                                        {{ $hours }}:{{ $remaining_minutes }}
-                                    </td>
+                                    <td>@minutestotime($result->flighttime)</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -58,18 +49,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                          {{-- Disposable Example --}}
+                          {{--}}
+                          @foreach($resultftMonth as $res)
+                            <tr>
+                              <td>{{ $loop->iteration }}</td>
+                              <td>{{ $res->user->name_private }}</td>
+                              <td>@minutestotime($res->totaltime)</td>
+                            </tr>
+                          @endforeach
+                          {{--}}
+                          {{-- Original Code with time display fix --}}
                             @foreach($resultftMonth as $index => $result)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $result->user_name }}</td>
-                                    <td>
-                                        @php
-                                            $minutes = $result->flighttime;
-                                            $hours = floor($minutes / 60);
-                                            $remaining_minutes = $minutes % 60;
-                                        @endphp
-                                        {{ $hours }}:{{ $remaining_minutes }}
-                                    </td>
+                                    <td>@minutestotime($result->flighttime)</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -92,14 +87,7 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $result->user_name }}</td>
-                                    <td>
-                                        @php
-                                            $minutes = $result->flighttime;
-                                            $hours = floor($minutes / 60);
-                                            $remaining_minutes = $minutes % 60;
-                                        @endphp
-                                        {{ $hours }}:{{ $remaining_minutes }}                                        
-                                    </td>
+                                    <td>@minutestotime($result->flighttime)</td>
                                 </tr>
                             @endforeach
                         </tbody>

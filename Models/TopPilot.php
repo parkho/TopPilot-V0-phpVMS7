@@ -5,7 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Pirep;
 use App\Models\User;
 use App\Models\Enums\PirepState;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+
 class TopPilot extends Model
 {
     protected $table = 'users'; // Use the correct table name
@@ -39,6 +41,22 @@ class TopPilot extends Model
         ->orderByDesc('flighttime');
 
         $results = $query->limit(10)->get();
+
+        // Disposable Example
+        // This will return a laravel collection with user and rank relationships in a more laravelish way
+        // So $result->user and $result->user->rank will be available
+        $start = Carbon::now()->startOfMonth();
+        $end = Carbon::now()->endOfMonth();
+
+        $bytime = Pirep::with('user.rank')
+            ->selectRaw('id, user_id, sum(flight_time) as totaltime')        
+            ->where('state', PirepState::ACCEPTED)
+            ->whereBetween('submitted_at', [$start, $end])
+            ->groupBy('user_id')
+            ->orderBy('totaltime', 'DESC')
+            ->take(10)
+            ->get();
+        // End Example
 
         return $results;
     }
